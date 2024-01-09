@@ -1,0 +1,19 @@
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0; /* Adjust padding as needed */
+  }
+
+.profile-pic-container img {
+    border-radius: 50%; /* Makes the image circular */
+    width: 33%; /* Sets the width */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+
+.home-container section {
+    padding-left: 15%; /* Adds padding to the left */
+    padding-right: 15%; /* Adds padding to the right */
+    padding-bottom: 2.5%;
+  }
+

@@ -1,0 +1,46 @@
+nav {
+    /* border-radius: 5px; */
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Apply Flexbox */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Take full width to spread items */
+  }
+
+  nav ul li {
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  nav ul li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  nav ul li a:hover {
+    background-color: #111;
+  }
+
+  .logo {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    transition: transform 0.2s; /* Add a smooth transition effect */
+    margin-right: 20px; /* Add some space after the logo */
+  }
+
+  /* Apply a hover effect to the logo */
+  .logo:hover {
+    transform: scale(1.1); /* Slightly increase the size on hover */
+  }

@@ -1,5 +1,18 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.App-content {
+  flex: 1; /* Allows this element to expand to fill available space */
+  /* Add other styles for your main content area if needed */
 }
 
 .App-logo {
@@ -36,4 +49,15 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
