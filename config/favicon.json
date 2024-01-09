@@ -1,0 +1,63 @@
+{
+    "master_picture": "TODO: Path to your master picture",
+    "favicon_design": {
+        "ios": {
+            "picture_aspect": "background_and_margin",
+            "background_color": "#e2e7be",
+            "margin": "21%",
+            "assets": {
+                "ios6_and_prior_icons": false,
+                "ios7_and_later_icons": false,
+                "precomposed_icons": false,
+                "declare_only_default_icon": true
+            }
+        },
+        "desktop_browser": {
+            "design": "background",
+            "backgroundColor": "#e2e7be",
+            "backgroundRadius": 0.45,
+            "imageScale": 0.8
+        },
+        "windows": {
+            "picture_aspect": "no_change",
+            "background_color": "#ffc40d",
+            "on_conflict": "override",
+            "assets": {
+                "windows_80_ie_10_tile": true,
+                "windows_10_ie_11_edge_tiles": {
+                    "small": false,
+                    "medium": true,
+                    "big": false,
+                    "rectangle": false
+                }
+            }
+        },
+        "android_chrome": {
+            "picture_aspect": "shadow",
+            "theme_color": "#e2e7be",
+            "manifest": {
+                "name": "S.li",
+                "display": "standalone",
+                "orientation": "not_set",
+                "on_conflict": "override",
+                "declared": true
+            },
+            "assets": {
+                "legacy_icon": false,
+                "low_resolution_icons": false
+            }
+        },
+        "safari_pinned_tab": {
+            "picture_aspect": "black_and_white",
+            "threshold": 90,
+            "theme_color": "#a3ab6f"
+        }
+    },
+    "settings": {
+        "scaling_algorithm": "Mitchell",
+        "error_on_image_too_small": false,
+        "readme_file": false,
+        "html_code_file": false,
+        "use_path_as_is": false
+    }
+}
