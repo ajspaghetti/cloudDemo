@@ -1,0 +1,30 @@
+.education-container {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .education-container h1 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .education-container h2 {
+    text-align: left;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .education-container p {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .education-entry {
+    margin-bottom: 20px;
+  }
+
+

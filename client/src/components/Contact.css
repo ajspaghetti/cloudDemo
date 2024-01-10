@@ -1,0 +1,54 @@
+/* Contact.css */
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between rows and columns */
+    padding-top: 50px; /* Buffer from the navbar */
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    width: calc(33.333% - 40px); /* Adjust width for 3 items per row, considering the gap */
+    margin: 10px; /* Margin around each box for buffering */
+  }
+
+  .contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-method img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .contact-method {
+      width: calc(50% - 40px); /* 2 items per row on medium screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-method {
+      width: 100%; /* Full width on small screens */
+      justify-content: start;
+    }
+  }

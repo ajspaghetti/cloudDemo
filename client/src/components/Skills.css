@@ -1,0 +1,27 @@
+/* Skills.css */
+
+.skills-container {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .skills-container h1 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .skills-list {
+    list-style-type: none; /* Removes the default list styling */
+    margin: 0;
+    padding: 0;
+  }
+
+  .skills-list li {
+    text-align: left;
+    margin-bottom: 5px; /* Spacing between each skill */
+  }
+
+  /* Additional styles as needed */

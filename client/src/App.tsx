@@ -6,7 +6,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
+import WorkHistory from './components/WorkHistory'
+import Education from './components/Education'
+import Skills from './components/Skills'
 import Footer from './components/Footer';
+import Shop from './components/Shop'
+import Projects from './components/Projects'
+import CreateAccount from './components/CreateAccount';
+import Forgot from './components/Forgot';
 import './App.css';
 
 const App: React.FC = () => {
@@ -20,6 +27,13 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/workhistory" element={<WorkHistory />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/forgot" element={<Forgot />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
