@@ -66,6 +66,9 @@ group :development do
   # For authentication
   gem 'devise'
 
+  # database
+  gem 'mongoid'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

@@ -1,5 +1,5 @@
 # Use an official Ruby image as a parent image
-FROM ruby:2.7
+FROM ruby:3.2.2
 
 # Install dependencies
 # Node.js and Yarn are required for Rails Webpacker

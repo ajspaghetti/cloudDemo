@@ -1,27 +1,36 @@
-/* Skills.css */
-
 .skills-container {
-    padding-left: 25%;
-    padding-right: 25%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .skills-container h1 {
-    text-align: left;
-    font-size: 2em;
-    margin-bottom: 10px;
+    text-align: center;
   }
 
   .skills-list {
-    list-style-type: none; /* Removes the default list styling */
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style-type: none;
     padding: 0;
+    gap: 10px;
+    margin: 0 auto;
   }
 
-  .skills-list li {
-    text-align: left;
-    margin-bottom: 5px; /* Spacing between each skill */
+  .skills-list::after {
+    content: '';
+    flex: auto;
   }
 
-  /* Additional styles as needed */
+  .skill-box {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    color: whitesmoke;
+    padding: 10px;
+    box-sizing: border-box;
+    width: calc(100% / 6 - 10px); /* Adjust for 6 items per row with spacing */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Rounded edges */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .skill-box:hover {
+    transform: scale(1.05); /* Pop out effect on hover */
+    background-color: /* Slightly darker color on hover, you may need JavaScript to adjust this based on the background color */;
+  }
