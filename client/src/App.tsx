@@ -14,6 +14,7 @@ import Shop from './components/Shop'
 import Projects from './components/Projects'
 import CreateAccount from './components/CreateAccount';
 import Forgot from './components/Forgot';
+import EmailSubmission from './components/EmailSubmission';
 import './App.css';
 
 const App: React.FC = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/forgot" element={<Forgot />} />
+            <Route path="/emailsubmission" element={<EmailSubmission />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
