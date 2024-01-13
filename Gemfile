@@ -57,6 +57,7 @@ gem "rack-cors"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rspec-rails", "~> 5.0"
 end
 
 group :development do
@@ -66,8 +67,14 @@ group :development do
   # For authentication
   gem 'devise'
 
-  # Usedatabase
+  # For database
   gem 'mongoid'
+
+  # Database cleaners
+  gem 'database_cleaner'
+
+  # RSpec Rails
+
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
