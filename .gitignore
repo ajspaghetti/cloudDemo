@@ -40,3 +40,4 @@ db_data/WiredTiger.wt
 db_data/diagnostic.data/metrics.2024-01-14T20-06-10Z-00000
 db_data/diagnostic.data/metrics.interim
 db_data/journal/WiredTigerLog.0000000001
+
