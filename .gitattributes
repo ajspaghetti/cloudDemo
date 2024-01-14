@@ -1,5 +1,7 @@
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
+# Dealing with large files
+db_data/journal/* annex=large
 
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
