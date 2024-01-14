@@ -1,0 +1,24 @@
+.work-history-container {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+
+  .work-history-container h2, .work-history-container h3 {
+    text-align: left;
+  }
+
+  .work-history-container p, .work-history-container ul, .work-history-container li {
+    text-align: left;
+  }
+
+  .job, .education-entry, .skills, .languages, .achievements, .references {
+    margin-bottom: 20px;
+  }
+
+  .job ul, .achievements ul, .references ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+
+ 
+
