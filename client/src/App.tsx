@@ -39,9 +39,9 @@ const App: React.FC = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           {/* Integrate "Learn" text with a regular expression match */}
-          <div>
+          {/* <div>
             {/learn/i.test('Learn') && 'Learn'}
-          </div>
+          </div> */}
         </Router>
       </div>
       <Footer />
