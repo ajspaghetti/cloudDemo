@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, FocusEvent, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import authService from '../services/authService'; // Make sure this path is correct
+import { setUser } from '../redux/userSlice'; // Make sure this path is correct
 import './Login.css';
 
 interface FormData {
@@ -10,6 +12,7 @@ interface FormData {
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // For redirecting after successful login
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
@@ -19,7 +22,6 @@ const Login: React.FC = () => {
     email: false,
   });
 
-  // Email validation function
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -30,7 +32,6 @@ const Login: React.FC = () => {
       [name]: value,
     });
 
-    // Reset email validation error
     if (name === 'email') {
       setInvalidInput({ ...invalidInput, email: false });
     }
@@ -43,14 +44,20 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (invalidInput.email) {
       console.log("Invalid email format.");
       return;
     }
-    // Dispatch action to handle login
-    dispatch({ type: 'LOGIN_REQUEST', payload: formData });
+
+    try {
+      const user = await authService.login(formData.email, formData.password);
+      dispatch(setUser(user));
+      navigate('/'); // Redirect to home page after successful login
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

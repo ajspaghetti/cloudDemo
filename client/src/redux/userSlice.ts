@@ -1,15 +1,31 @@
-// userSlice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Add an empty export statement to make it a module
-export {};
+interface UserState {
+  user: any; // Update with your user type
+  isLoggedIn: boolean;
+}
 
-// Define your user slice using createSlice or whatever structure you prefer.
-// Example:
-// import { createSlice } from '@reduxjs/toolkit';
-// const userSlice = createSlice({
-//   name: 'user',
-//   initialState: {},
-//   reducers: {
-//     // Define your actions and reducers here
-//   },
-// });
+const initialState: UserState = {
+  user: null,
+  isLoggedIn: false,
+};
+
+const userSlice = createSlice({
+  name: 'user',
+  initialState,
+  reducers: {
+    setUser(state, action: PayloadAction<any>) { // Replace `any` with your user type
+      state.user = action.payload;
+      state.isLoggedIn = true;
+    },
+    logout(state) {
+      state.user = null;
+      state.isLoggedIn = false;
+      localStorage.removeItem('jwtToken');
+    },
+  },
+});
+
+export const { setUser, logout } = userSlice.actions;
+
+export default userSlice.reducer;

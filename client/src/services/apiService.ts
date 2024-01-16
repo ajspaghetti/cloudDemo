@@ -1,10 +1,15 @@
-// apiService.ts
+import axios from 'axios';
 
-// Add an empty export statement to make it a module
-export {};
+const apiService = axios.create({
+  baseURL: 'http://localhost:3000', // Update with your API base URL
+});
 
-// Define your API service functions below if you have any.
-// Example:
-// export const fetchData = async () => {
-//   // Your API logic here
-// };
+apiService.interceptors.request.use(config => {
+  const token = localStorage.getItem('jwtToken');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default apiService;
