@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiService = axios.create({
-  baseURL: 'http://localhost:3000', // Update with your API base URL
+  baseURL: 'http://localhost:3000', // Update with API base URL for the backend
 });
 
 apiService.interceptors.request.use(config => {

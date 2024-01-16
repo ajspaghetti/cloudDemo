@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './CreateAccount.css';
 
 // Updated form data interface to include new fields
@@ -67,7 +68,7 @@ const CreateAccount: React.FC = () => {
     }
   };
 
-  const handleCreateAccount = (e: FormEvent<HTMLFormElement>) => {
+  const handleCreateAccount = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Check for form validation before dispatching
@@ -76,9 +77,32 @@ const CreateAccount: React.FC = () => {
       return;
     }
 
-    // Dispatch action to create account - Needs integration with Rails Devise auth
-    console.log('Account creation request:', formData);
-    // Example: dispatch(createAccountAction(formData));
+    try {
+      // Construct the user registration data
+      const registrationData = {
+        email: formData.email,
+        password: formData.password,
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        phone_number: formData.phoneNumber,
+        company: formData.company,
+        title: formData.title,
+      };
+
+      // Send POST request to your Rails backend registration endpoint
+      const response = await axios.post('/users', { user: registrationData });
+
+      // Handle the response, show success message, or redirect
+      console.log('Registration Successful:', response.data);
+
+      // Redirect to the login page or another relevant page
+      // You can use React Router's history or Navigate component for this.
+      // For example, you can use history.push('/login') if using React Router.
+    } catch (error: any) { // Specify the type of 'error' as 'any'
+      // Handle registration error
+      console.error('Registration Error:', error.response?.data || error.message);
+      // Display an error message to the user
+    }
   };
 
   return (

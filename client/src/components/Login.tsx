@@ -117,8 +117,8 @@ const Login: React.FC = () => {
           </button>
 
           <div className="buttons-container">
-            <Link to="/create-account" className="button">Create new account</Link>
-            <Link to="/forgot-password" className="button">Forgot credentials</Link>
+            <Link to="/createaccount" className="button">Create new account</Link>
+            <Link to="/forgotpassword" className="button">Forgot credentials</Link>
           </div>
         </form>
       </div>

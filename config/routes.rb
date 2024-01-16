@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   post '/refresh-token', to: 'users#refresh_token'
+  post '/users', to: 'users/registrations#create'
   # You can define your root route if needed
   # root "some_controller#some_action"
 end
