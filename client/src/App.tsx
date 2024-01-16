@@ -15,7 +15,6 @@ import Shop from './components/Shop'
 import Projects from './components/Projects'
 import CreateAccount from './components/CreateAccount';
 import Forgot from './components/Forgot';
-import EmailSubmission from './components/EmailSubmission';
 import './App.css';
 
 const App: React.FC = () => {
@@ -35,16 +34,11 @@ const App: React.FC = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/forgot" element={<Forgot />} />
-            <Route path="/emailsubmission" element={<EmailSubmission />} />
             <Route path="*" element={<NotFound />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/shop" element={<Shop />} />
             </Route>
           </Routes>
-          {/* Integrate "Learn" text with a regular expression match */}
-          {/* <div>
-            {/learn/i.test('Learn') && 'Learn'}
-          </div> */}
         </Router>
       </div>
       <Footer />

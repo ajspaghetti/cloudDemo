@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './CreateAccount.css';
@@ -21,7 +21,8 @@ const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email
 const validatePhone = (phone: string) => /^\d{10}$/.test(phone);
 
 const CreateAccount: React.FC = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  // console.log(dispatch)
   const navigate = useNavigate();
 
   // Updated state to include new fields

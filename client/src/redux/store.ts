@@ -2,19 +2,18 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import userReducer, { setUser } from './userSlice'; // Import the user slice and setUser action
 
-// Retrieve user data from localStorage
-const persistedUser = JSON.parse(localStorage.getItem('user') || '{}');
+// Retrieve user data from localStorage and initialize Redux state with it
+const persistedUser = localStorage.getItem('user');
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    user: userReducer, // Add user reducer
+    user: userReducer,
   },
 });
 
-// Initialize the user data if available in localStorage
 if (persistedUser) {
-  store.dispatch(setUser(persistedUser));
+  store.dispatch(setUser(JSON.parse(persistedUser)));
 }
 
 export type AppDispatch = typeof store.dispatch;
