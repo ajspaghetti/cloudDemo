@@ -8,50 +8,50 @@
 # Project Outline
 1. Setting Up the Development Environment
     * Ruby on Rails and React Setup
-        - Install Ruby, Rails, and Node.js (for React) on your computer.
-        - Create a new Rails project: rails new myapp --webpack=react.
-        - Ensure your Rails app is running locally and you can create a simple React component.
-    * Dockerize Your Application
-        - Create a Dockerfile for both the Rails and React parts of your application.
-        - Build your Docker images and test them locally.
+        - Install Ruby, Rails, and Node.js (for React) on computer.
+        - Create a new Rails project: rails new ecommerce --webpack=react.
+        - Ensure Rails app is running locally and can create a simple React component.
+    * Dockerize Application
+        - Create a Dockerfile for both the Rails and React parts of application.
+        - Build Docker images and test them locally.
 
 2. Infrastructure as Code (IaC) with Terraform
     * Terraform Setup
         - Install Terraform.
-        - Write Terraform scripts to define your infrastructure for both AWS and Azure.
-        - This should include your network setup, VMs, load balancers, etc.
+        - Write Terraform scripts to define infrastructure for both AWS and Azure.
+        - This should include network setup, VMs, load balancers, etc.
     * Testing Infrastructure Locally
-        - You can test your Terraform scripts locally using Terraform CLI.
+        - You can test Terraform scripts locally using Terraform CLI.
 
 3. Kubernetes (K8s) for Container Orchestration
     * K8s Setup
         - Understand the basics of Kubernetes.
         - Create Kubernetes manifests (YAML files) for your application.
-        - You can test your setup locally using Minikube or Docker Desktop's Kubernetes feature.
+        - You can test setup locally using Minikube or Docker Desktop's Kubernetes feature.
     * K8s Scaling
         - Ensure your Kubernetes setup includes auto-scaling based on traffic.
 
 4. Deploying to Cloud (AWS & Azure)
     * AWS Deployment
-        - Use Terraform to deploy your infrastructure to AWS.
-        - Deploy your Docker containers to AWS using Amazon EKS (Elastic Kubernetes Service).
+        - Use Terraform to deploy infrastructure to AWS.
+        - Deploy Docker containers to AWS using Amazon EKS (Elastic Kubernetes Service).
     * Azure Deployment
         - Similarly, use Terraform to deploy to Azure.
-        - Deploy your Docker containers to Azure using Azure Kubernetes Service (AKS).
+        - Deploy Docker containers to Azure using Azure Kubernetes Service (AKS).
 
 5. Domain Configuration and SSL Setup
     * Subdomain Setup
-        - Configure app.spagno.li to point to your load balancer in the cloud (AWS/Azure).
+        - Configure https://spagno.li to point to your load balancer in the cloud (AWS/Azure).
         - Ensure you have an SSL certificate for HTTPS.
 
 6. Continuous Integration/Continuous Deployment (CI/CD)
     * CI/CD Pipeline
-        - You can use tools like Jenkins, GitHub Actions, or Azure Pipelines.
-        - Set up a pipeline that takes your code from repository to deployment automatically.
+        - Use tools like Jenkins, GitHub Actions, or Azure Pipelines.
+        - Set up a pipeline that takes code from repository to deployment automatically.
 
 7. Testing and Monitoring
     * Post-Deployment
-        - Conduct thorough testing of your application in the cloud.
+        - Conduct thorough testing of application in the cloud.
         - Set up monitoring and logging (using tools like Prometheus, Grafana, or cloud-specific tools).
 
 8. Documentation and Maintenance
@@ -59,7 +59,7 @@
         - Document your architecture, setup, and deployment procedures.
         - This is crucial for maintenance and possible scaling.
     * Regular Maintenance
-        - Regularly update your application and infrastructure for security and performance improvements.
+        - Regularly update application and infrastructure for security and performance improvements.
 
 # Ruby on Rails Notes
 
