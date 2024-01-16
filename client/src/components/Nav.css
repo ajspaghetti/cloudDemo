@@ -67,12 +67,14 @@ nav ul li a:hover {
 
 .logout-button {
   background-color: transparent;
-  flex-grow: 0; /* Add this property to prevent the button from growing */
+  font-size: 16px;
+  flex-grow: 0;
 }
 
 .logout-button:hover {
   background-color: darkred;
   opacity: 0.5;
+  color: white;
 }
 
 .user-email {

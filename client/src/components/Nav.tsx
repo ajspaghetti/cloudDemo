@@ -8,8 +8,8 @@ import './Nav.css';
 const Nav: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn); // Adjust according to your state structure
-  // const user = useSelector((state: any) => state.user);
+  const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
+  const user = useSelector((state: any) => state.user.user); // Get user email from state
 
   const handleLogout = () => {
     dispatch(logout());
@@ -25,7 +25,6 @@ const Nav: React.FC = () => {
           </Link>
         </li>
         <li><Link to="/">Home</Link></li>
-        {/* Conditional rendering based on login status */}
         {isLoggedIn && <li><Link to="/shop">Shop</Link></li>}
         <li><Link to="/about">About</Link></li>
         <li><Link to="/workhistory">Work History</Link></li>
@@ -38,7 +37,7 @@ const Nav: React.FC = () => {
             <li><Link to="/login" className="login-link">Login</Link></li>
           ) : (
             <>
-              {/* <span className="user-email">{user.email}</span> */}
+              {user && <span className="user-email">Logged in as: {user.email}</span>}
               <li><button onClick={handleLogout} className="logout-button">Logout</button></li>
             </>
           )}

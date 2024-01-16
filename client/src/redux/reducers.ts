@@ -1,15 +1,10 @@
-// reducers.ts
+import { combineReducers } from '@reduxjs/toolkit';
+import userReducer from './userSlice';
+// Import other reducers
 
-// Add an empty export statement to make it a module
-export {};
+const rootReducer = combineReducers({
+  user: userReducer,
+  // other reducers
+});
 
-// Define your reducers and initial state below if you have any.
-// Example:
-// const initialState = {};
-// const myReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     // Reducer logic here
-//     default:
-//       return state;
-//   }
-// };
+export default rootReducer;

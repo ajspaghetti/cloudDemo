@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from "react";
 import "./EmailSubmission.css";
 
@@ -90,7 +96,7 @@ const EmailSubmission = () => {
   return (
     <>
       <div className="es-header">
-        <h2>Get in touch with me</h2>
+        <h2>Contact me directly</h2>
       </div>
       <div className="textfield-container">
         <form

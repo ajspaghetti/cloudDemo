@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './CreateAccount.css';
 
@@ -22,7 +22,7 @@ const validatePhone = (phone: string) => /^\d{10}$/.test(phone);
 
 const CreateAccount: React.FC = () => {
   const dispatch = useDispatch();
-  console.log(dispatch)
+  const navigate = useNavigate();
 
   // Updated state to include new fields
   const [formData, setFormData] = useState<AccountFormData>({
@@ -91,13 +91,9 @@ const CreateAccount: React.FC = () => {
 
       // Send POST request to your Rails backend registration endpoint
       const response = await axios.post('/users', { user: registrationData });
-
-      // Handle the response, show success message, or redirect
       console.log('Registration Successful:', response.data);
 
-      // Redirect to the login page or another relevant page
-      // You can use React Router's history or Navigate component for this.
-      // For example, you can use history.push('/login') if using React Router.
+      navigate('/login', { state: { message: 'Thank you for registering! Please log in with your new credentials.' } });
     } catch (error: any) { // Specify the type of 'error' as 'any'
       // Handle registration error
       console.error('Registration Error:', error.response?.data || error.message);

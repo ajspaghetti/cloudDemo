@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserState {
-  user: any; // Update with your user type
+  user: any;
   isLoggedIn: boolean;
 }
+
+interface User {
+    email: string;
+    // Add other user properties here
+  }
 
 const initialState: UserState = {
   user: null,
@@ -14,7 +19,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser(state, action: PayloadAction<any>) { // Replace `any` with your user type
+    setUser(state, action: PayloadAction<User>) { // Replace `any` with your user type
       state.user = action.payload;
       state.isLoggedIn = true;
     },
