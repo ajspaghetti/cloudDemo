@@ -76,7 +76,6 @@
 # Terraform Notes
 
 # Additional Notes
-* This is a simplified guide. Each step can be quite complex and may require additional research and learning.
 * Consider security best practices at each step, especially when deploying to the cloud and managing databases.
 * Be aware of the costs associated with cloud services and Kubernetes usage.
 
