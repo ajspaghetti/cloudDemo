@@ -86,3 +86,7 @@
 * Terraform: Terraform's official documentation and guides.
 * Kubernetes: Kubernetes official documentation, online courses.
 * Cloud Platforms (AWS & Azure): Official documentation and tutorials provided by AWS and Azure.
+
+
+Resources:
+* https://www.npmjs.com/package/react-app-rewired

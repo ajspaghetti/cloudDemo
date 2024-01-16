@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute';
 import Nav from './components/Nav'; // Adjust the import path as necessary
 import Home from './components/Home';
 import About from './components/About';
@@ -14,7 +15,6 @@ import Shop from './components/Shop'
 import Projects from './components/Projects'
 import CreateAccount from './components/CreateAccount';
 import Forgot from './components/Forgot';
-import EmailSubmission from './components/EmailSubmission';
 import './App.css';
 
 const App: React.FC = () => {
@@ -32,16 +32,13 @@ const App: React.FC = () => {
             <Route path="/education" element={<Education />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/shop" element={<Shop />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/forgot" element={<Forgot />} />
-            <Route path="/emailsubmission" element={<EmailSubmission />} />
             <Route path="*" element={<NotFound />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/shop" element={<Shop />} />
+            </Route>
           </Routes>
-          {/* Integrate "Learn" text with a regular expression match */}
-          {/* <div>
-            {/learn/i.test('Learn') && 'Learn'}
-          </div> */}
         </Router>
       </div>
       <Footer />

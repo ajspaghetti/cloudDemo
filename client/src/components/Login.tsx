@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, FocusEvent, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import authService from '../services/authService';
+import { setUser } from '../redux/userSlice';
 import './Login.css';
 
 interface FormData {
@@ -10,16 +12,18 @@ interface FormData {
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
   });
-
   const [invalidInput, setInvalidInput] = useState({
     email: false,
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [isPasswordEmpty, setIsPasswordEmpty] = useState(true);
+  const [loginError, setLoginError] = useState('');
 
-  // Email validation function
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -30,9 +34,12 @@ const Login: React.FC = () => {
       [name]: value,
     });
 
-    // Reset email validation error
     if (name === 'email') {
       setInvalidInput({ ...invalidInput, email: false });
+    }
+
+    if (name === 'password') {
+      setIsPasswordEmpty(value.length === 0);
     }
   };
 
@@ -43,14 +50,25 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (invalidInput.email) {
       console.log("Invalid email format.");
       return;
     }
-    // Dispatch action to handle login
-    dispatch({ type: 'LOGIN_REQUEST', payload: formData });
+
+    try {
+      const user = await authService.login(formData.email, formData.password);
+      dispatch(setUser(user));
+      navigate('/');
+    } catch (error) {
+      setLoginError('Invalid username or password');
+      console.error(error);
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -75,10 +93,9 @@ const Login: React.FC = () => {
               <div className="validation-message">Invalid email format.</div>
             )}
           </div>
-
-          <div className="input-container">
+          <div className="input-container password-container">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               name="password"
               value={formData.password}
@@ -86,15 +103,22 @@ const Login: React.FC = () => {
               required
             />
             <label htmlFor="password" className={formData.password ? 'hidden' : ''}>Password</label>
+            {!isPasswordEmpty && (
+              <span className="password-toggle" onClick={togglePasswordVisibility}>
+                {/* Replace with your icon or leave blank for now */}
+              </span>
+            )}
           </div>
+
+          {loginError && <div className="login-error">{loginError}</div>}
 
           <button type="submit" className="login-button">
             Login
           </button>
 
           <div className="buttons-container">
-            <Link to="/create-account" className="button">Create new account</Link>
-            <Link to="/forgot-password" className="button">Forgot credentials</Link>
+            <Link to="/createaccount" className="button">Create new account</Link>
+            <Link to="/forgotpassword" className="button">Forgot credentials</Link>
           </div>
         </form>
       </div>
