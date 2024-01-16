@@ -1,4 +1,3 @@
-// In a sessionUtils.ts file
 export const isSessionValid = () => {
     const loginTimeStr = localStorage.getItem('loginTime');
     const loginTime = loginTimeStr ? new Date(JSON.parse(loginTimeStr)) : new Date(); // Initialize with the current time if not found in localStorage
