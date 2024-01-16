@@ -2,9 +2,11 @@ import apiService from './apiService';
 
 const login = async (email: string, password: string) => {
     try {
-        const response = await apiService.post('/users', { email, password });
+        // Change the endpoint to /users/sign_in for login
+        const response = await apiService.post('/users/sign_in', { user: { email, password } });
         const token = response.data.token;
         localStorage.setItem('jwtToken', token);
+        // localStorage.setItem('user', JSON.stringify(user));
         return response.data.user;
     } catch (error) {
         // Handle error (e.g., incorrect credentials, network issues, etc.)

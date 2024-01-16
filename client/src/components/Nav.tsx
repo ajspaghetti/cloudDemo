@@ -9,6 +9,7 @@ const Nav: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn); // Adjust according to your state structure
+  const user = useSelector((state: any) => state.user);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -33,12 +34,15 @@ const Nav: React.FC = () => {
         <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <div className="login-container">
-          {!isLoggedIn ? (
-            <li><Link to="/login">Login</Link></li>
-          ) : (
+        {!isLoggedIn ? (
+          <li><Link to="/login" className="login-link">Login</Link></li>
+        ) : (
+          <>
+            <span className="user-email">{user.email}</span>
             <li><button onClick={handleLogout} className="logout-button">Logout</button></li>
-          )}
-        </div>
+          </>
+        )}
+      </div>
       </ul>
     </nav>
   );

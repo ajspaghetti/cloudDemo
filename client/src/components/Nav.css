@@ -46,3 +46,34 @@ nav {
   .login-container {
     margin-left: auto;
   }
+
+  .login-link, .logout-button {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .login-link:hover {
+    background-color: darkgreen;
+    opacity: 0.5;
+  }
+
+  .logout-button {
+    background-color: transparent;
+  }
+
+  .logout-button:hover {
+    background-color: darkred;
+    opacity: 0.5;
+  }
+
+  .user-email {
+    color: white;
+    padding: 16px;
+    display: inline-block;
+  }
