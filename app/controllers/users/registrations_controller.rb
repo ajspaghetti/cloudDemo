@@ -8,11 +8,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
         # Manually handle JWT token generation and user sign-in
         @token = generate_jwt_token_for(resource)
         response.set_header('Authorization', @token)
-        render json: { user: resource, token: @token }, status: :created
+        render json: { user: resource.as_json(except: [:encrypted_password]), token: @token }, status: :created
       else
         # For inactive accounts, adjust the response as needed
         expire_data_after_sign_in!
-        render json: { user: resource }, status: :ok
+        render json: { user: resource.as_json(except: [:encrypted_password]) }, status: :ok
       end
     else
       clean_up_passwords resource
@@ -24,6 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def generate_jwt_token_for(user)
-    # Implement JWT token generation logic here
+    # Using devise-jwt to generate a JWT token for the user
+    Warden::JWTAuth::UserEncoder.new.call(user, :user, nil).first
   end
 end
