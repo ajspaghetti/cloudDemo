@@ -58,6 +58,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "mongoid-rspec", git: 'https://github.com/mongoid-rspec/mongoid-rspec.git'
 end
 
 gem "mongoid"
@@ -67,3 +68,9 @@ gem "devise"
 gem "devise-jwt"
 
 gem "devise-encryptable"
+
+gem 'devise_token_auth', '>= 1.2.0', git: "https://github.com/lynndylanhurley/devise_token_auth"
+
+gem "rack-cors", :require => 'rack/cors'
+
+

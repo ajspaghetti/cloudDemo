@@ -23,10 +23,20 @@ module Ecommerce
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
+    # Setting the application to API mode
+    config.api_only = true
+
+    # Add the following line to configure the session store
+    config.session_store :cookie_store, key: '_ecommerce_session' # aspagnoli changed and added
+    # Replace '_your_app_session' with a unique name for your application
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    # In this section, you can specify directories that should be ignored during autoload.
+    # For example, you can ignore the 'assets' and 'tasks' directories.
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app', 'services')
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -2,23 +2,26 @@ class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable # enabled now
+  devise :database_authenticatable, :registerable, :recoverable, :validatable, :trackable, :jwt_authenticatable, jwt_revocation_strategy: self
 
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
+  field :first_name, type: String, default: ""
+  field :last_name, type: String, default: ""
+  field :company, type: String
+  field :title, type: String
+  field :phone_number, type: String
 
   ## Recoverable
   field :reset_password_token,   type: String
   field :reset_password_sent_at, type: Time
 
   ## Rememberable
-  field :remember_created_at, type: Time
+  # field :remember_created_at, type: Time
 
   ## Validations
-  validates :first_name, :last_name, :email, :password, presence: true
+  validates :first_name, :last_name, presence: true
 
   ## Trackable
   field :sign_in_count,      type: Integer, default: 0
@@ -28,14 +31,14 @@ class User
   field :last_sign_in_ip,    type: String
 
   ## Confirmable
-  field :confirmation_token,   type: String
-  field :confirmed_at,         type: Time
-  field :confirmation_sent_at, type: Time
-  field :unconfirmed_email,    type: String # Only if using reconfirmable
+  # field :confirmation_token,   type: String
+  # field :confirmed_at,         type: Time
+  # field :confirmation_sent_at, type: Time
+  # field :unconfirmed_email,    type: String # Only if using reconfirmable
 
   ## Lockable
-  field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  field :locked_at,       type: Time
+  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
+  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
+  # field :locked_at,       type: Time
   include Mongoid::Timestamps
 end

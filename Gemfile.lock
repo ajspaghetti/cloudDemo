@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/lynndylanhurley/devise_token_auth
+  revision: 6b0659f18c678b319913d0fb053e96aa555857aa
+  specs:
+    devise_token_auth (1.2.2)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.2)
+
+GIT
+  remote: https://github.com/mongoid-rspec/mongoid-rspec.git
+  revision: 8bb0c65dabda1b1819d3761c673fb6815929e3a8
+  specs:
+    mongoid-rspec (4.1.1)
+      mongoid (>= 3.0, < 9.0)
+      mongoid-compatibility (>= 0.5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -159,6 +176,9 @@ GEM
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
       ruby2_keywords (~> 0.0.5)
+    mongoid-compatibility (0.6.0)
+      activesupport
+      mongoid (>= 2.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
     net-imap (0.4.9.1)
@@ -191,6 +211,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -301,10 +323,13 @@ DEPENDENCIES
   devise
   devise-encryptable
   devise-jwt
+  devise_token_auth (>= 1.2.0)!
   importmap-rails
   jbuilder
   mongoid
+  mongoid-rspec!
   puma (>= 5.0)
+  rack-cors
   rails (~> 7.1.2)
   redis (>= 4.0.1)
   selenium-webdriver
