@@ -1,10 +1,8 @@
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
-// import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './CreateAccount.css';
 
-// Updated form data interface to include new fields
 interface AccountFormData {
   email: string;
   password: string;
@@ -16,16 +14,12 @@ interface AccountFormData {
   title: string;
 }
 
-// Utility functions for validation
 const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string) => /^\d{10}$/.test(phone);
 
 const CreateAccount: React.FC = () => {
-  // const dispatch = useDispatch();
-  // console.log(dispatch)
   const navigate = useNavigate();
 
-  // Updated state to include new fields
   const [formData, setFormData] = useState<AccountFormData>({
     email: '',
     password: '',
@@ -51,7 +45,6 @@ const CreateAccount: React.FC = () => {
       [name]: value,
     });
 
-    // Resetting validation flags
     if (name === 'email' || name === 'phoneNumber') {
       setInvalidInput({
         ...invalidInput,
@@ -72,14 +65,12 @@ const CreateAccount: React.FC = () => {
   const handleCreateAccount = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Check for form validation before dispatching
     if (invalidInput.email || invalidInput.phone) {
       console.log("Invalid input in the form.");
       return;
     }
 
     try {
-      // Construct the user registration data
       const registrationData = {
         email: formData.email,
         password: formData.password,
@@ -90,15 +81,12 @@ const CreateAccount: React.FC = () => {
         title: formData.title,
       };
 
-      // Send POST request to your Rails backend registration endpoint
       const response = await axios.post('/users', { user: registrationData });
       console.log('Registration Successful:', response.data);
 
       navigate('/login', { state: { message: 'Thank you for registering! Please log in with your new credentials.' } });
-    } catch (error: any) { // Specify the type of 'error' as 'any'
-      // Handle registration error
+    } catch (error: any) {
       console.error('Registration Error:', error.response?.data || error.message);
-      // Display an error message to the user
     }
   };
 

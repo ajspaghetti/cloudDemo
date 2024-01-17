@@ -2,14 +2,14 @@ import React, { useState, useEffect, ChangeEvent, FormEvent, FocusEvent } from "
 import axios from 'axios'; // Import axios for making the POST request
 import "./EmailSubmission.css";
 
-// Define the structure of the user prop
 interface UserProps {
   user: {
     first_name?: string;
     last_name?: string;
     email?: string;
     phone?: string;
-    // Add other user properties if needed
+    company?: string;
+    title?: string;
   };
 }
 
@@ -31,7 +31,6 @@ interface InvalidInputType {
 }
 
 const EmailSubmission = ({ user }: UserProps) => {
-  // State for form data
   const [formData, setFormData] = useState<FormDataType>({
     firstName: "",
     lastName: "",
@@ -42,17 +41,14 @@ const EmailSubmission = ({ user }: UserProps) => {
     message: "",
   });
 
-  // State for invalid input tracking
   const [invalidInput, setInvalidInput] = useState<InvalidInputType>({
     email: false,
     phone: false,
   });
 
-  // Email and phone validation functions
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const validatePhone = (phone: string) => /^\d{10}$/.test(phone);
 
-  // Update form data when the user prop changes
   useEffect(() => {
     if (user) {
       setFormData(formData => ({
@@ -65,7 +61,6 @@ const EmailSubmission = ({ user }: UserProps) => {
     }
   }, [user]);
 
-  // Handle changes in form inputs
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -82,7 +77,6 @@ const EmailSubmission = ({ user }: UserProps) => {
     }
   };
 
-  // Handle focus loss on email and phone inputs
   const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     if (name === "email" && value && !validateEmail(value)) {
@@ -92,7 +86,6 @@ const EmailSubmission = ({ user }: UserProps) => {
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (invalidInput.email || invalidInput.phone) {
@@ -100,16 +93,13 @@ const EmailSubmission = ({ user }: UserProps) => {
       return;
     }
     try {
-      const response = await axios.post('YOUR_API_ENDPOINT', formData);
+      const response = await axios.post('/reachouts', formData);
       console.log('Form submission successful:', response.data);
-      // Additional logic for handling successful submission
     } catch (error) {
       console.error('Form submission error:', error);
-      // Additional logic for handling submission error
     }
   };
 
-  // Handle form reset
   const handleReset = () => {
     setFormData({
       firstName: "",
@@ -134,7 +124,6 @@ const EmailSubmission = ({ user }: UserProps) => {
       </div>
       <div className="textfield-container">
         <form className="textfield-form" onSubmit={handleSubmit} onReset={handleReset}>
-          {/* Form inputs and labels */}
 
           {/* First Name Input */}
           <div className="input-container">

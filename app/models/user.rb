@@ -17,6 +17,9 @@ class User
   field :reset_password_token,   type: String
   field :reset_password_sent_at, type: Time
 
+  ## Relationship
+  has_many :reachouts
+
   ## Rememberable
   # field :remember_created_at, type: Time
 

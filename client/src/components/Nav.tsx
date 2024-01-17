@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../redux/userSlice'; // Adjust path as necessary
+import { logout } from '../redux/userSlice';
 import logoImage from '../assets/images/Sli1.png';
 import './Nav.css';
 
@@ -9,11 +9,11 @@ const Nav: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
-  const user = useSelector((state: any) => state.user.user); // Get user email from state
+  const user = useSelector((state: any) => state.user.user); 
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/'); // Redirect to home page after logout
+    navigate('/');
   };
 
   return (

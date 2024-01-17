@@ -1,4 +1,4 @@
-const { override, addWebpackModuleRule, addWebpackPlugin } = require('customize-cra');
+const { override, addWebpackModuleRule } = require('customize-cra');
 const webpack = require('webpack');
 
 module.exports = override(

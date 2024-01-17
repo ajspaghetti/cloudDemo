@@ -2,7 +2,7 @@ import axios from 'axios';
 import { refreshTokenIfNeeded } from './tokenService'; // Import the function
 
 const apiService = axios.create({
-  baseURL: 'http://localhost:3000', // Update with API base URL for the backend
+  baseURL: 'http://localhost:3001/',
 });
 
 apiService.interceptors.request.use(async (config) => {

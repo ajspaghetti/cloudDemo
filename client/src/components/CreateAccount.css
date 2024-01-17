@@ -9,12 +9,15 @@
 .create-account-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 50vh;
+  align-items: flex-start; /* align items to the start */
+  margin: 0 10px; /* add some margin on the sides */
+  height: auto; /* change height to auto */
+  overflow-y: auto; /* add scrolling for overflow */
 }
 
 .create-account-form {
-  width: 300px; /* Consistent with EmailSubmission.css */
+  width: 300px;
+  max-width: 100%; /* ensure it doesn't exceed the viewport width */
 }
 
 .input-container {
@@ -29,7 +32,6 @@
   border-bottom: 2px solid #333;
   outline: none;
   background-color: transparent;
-  /* Font size and color consistent with EmailSubmission.css */
   font-size: 16px;
   color: #333;
 }
@@ -41,7 +43,7 @@
 .buttons-container {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Added gap for spacing */
+  gap: 10px;
 }
 
 .create-account-button, .button {
@@ -92,7 +94,6 @@
     color: red;
   }
 
-  /* Additional styles for responsiveness and aesthetics */
   @media (max-width: 600px) {
   .create-account-form {
   width: 90%;
@@ -101,4 +102,24 @@
   .input-container input, .input-container textarea {
   font-size: 14px;
   }
+  }
+
+  @media (max-width: 600px) {
+    .create-account-form {
+      width: 90%;
+    }
+
+    .input-container input, .input-container textarea {
+      font-size: 14px;
+    }
+
+    .buttons-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .create-account-button, .button {
+      width: 100%;
+      margin-bottom: 10px; 
+    }
   }

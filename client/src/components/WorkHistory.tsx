@@ -77,38 +77,6 @@ const WorkHistory = () => {
           </ul>
         </div>
 
-        {/* Education */}
-        <section className="education">
-          <h2>Education</h2>
-          <div className="education-entry">
-            <h3>BA International Relations</h3>
-            <p>US Foreign Policy, Intl. Trade</p>
-            <p>University of Delaware, Graduated 2016</p>
-          </div>
-          <div className="education-entry">
-            <h3>Certified Software Engineer</h3>
-            <p>React, Ruby on Rails, SQL, AWS</p>
-            <p>Flatiron School, September 2022 to March 2023</p>
-          </div>
-          <div className="education-entry">
-            <h3>Certified Solutions Architect</h3>
-            <p>AZ-104, AZ-305</p>
-            <p>Microsoft, In progress</p>
-          </div>
-        </section>
-
-        {/* Skills */}
-        <section className="skills">
-          <h2>Skills</h2>
-          <p>Azure, AWS, O365, SharePoint, Virtual Machines (VMs), EDR, MDR, XDR, SIEM, SOAR, HTML, CSS, JavaScript, React, JSX, TypeScript, Redux, Ruby on Rails, Python, Django, Flask, SQL, PostgreSQL, MySQL, Git, GitHub, PowerShell, Bash, VBA, Linux, Ubuntu Server</p>
-        </section>
-
-        {/* Languages */}
-        <section className="languages">
-          <h2>Languages</h2>
-          <p>English (Native), Spanish (Native), Italian (Fluent), Arabic (Intermediate)</p>
-        </section>
-
         {/* Achievements */}
         <section className="achievements">
           <h2>Achievements</h2>

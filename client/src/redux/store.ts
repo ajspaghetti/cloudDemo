@@ -1,20 +1,16 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import userReducer, { setUser } from './userSlice'; // Import the user slice and setUser action
-
-// Retrieve user data from localStorage and initialize Redux state with it
-const persistedUser = localStorage.getItem('user');
+import userReducer from './userSlice';
+import reachoutReducer from './reachoutSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     user: userReducer,
+    reachout: reachoutReducer,
   },
+  // Add any middleware or enhancers here if necessary
 });
-
-if (persistedUser) {
-  store.dispatch(setUser(JSON.parse(persistedUser)));
-}
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
