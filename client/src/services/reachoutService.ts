@@ -1,6 +1,6 @@
 import authService from './authService';
 
-const API_URL = 'http://localhost:3000/';
+const API_URL = 'http://localhost:3001/';
 
 const reachoutService = {
   getReachouts: async () => {
@@ -23,7 +23,7 @@ const reachoutService = {
       return response.json();
     } catch (error) {
       console.error('Error in getReachouts:', error);
-      throw error; 
+      throw error;
     }
   },
 };

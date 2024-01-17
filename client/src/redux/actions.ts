@@ -9,7 +9,7 @@ export const registerUser = createAction<{ email: string; password: string; firs
 
 export const fetchUserData = () => async (dispatch: Dispatch) => {
   try {
-    const response = await axios.get('/api/user'); // Adjust API endpoint as necessary
+    const response = await axios.get('/user'); // Adjust API endpoint as necessary
     // Ensure setUserData is defined and imported
     dispatch(setUser(response.data));
   } catch (error) {
