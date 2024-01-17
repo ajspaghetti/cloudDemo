@@ -34,4 +34,8 @@
 /node_modules/
 /app/assets/builds/*
 !/app/assets/builds/.keep
-/public/assets
+# /public/assets
+
+# But not these files...
+!/client/public/
+!/client/src/

@@ -1,7 +1,7 @@
 # Use a Node.js base image
 FROM node:14 as build
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
 # Copy package.json and package-lock.json (or yarn.lock)
@@ -19,5 +19,9 @@ RUN npm run build
 # Use Nginx to serve the React application
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port 80 to the outside once the container has launched
 EXPOSE 80
+
+# Start Nginx when the container is launched
 CMD ["nginx", "-g", "daemon off;"]
