@@ -1,6 +1,5 @@
 import axios from 'axios'; // Import axios
 import { createAction, Dispatch } from '@reduxjs/toolkit';
-// Import setUserData if it's defined in another file
 import { setUser } from './userSlice';
 
 // Define an action to register a user

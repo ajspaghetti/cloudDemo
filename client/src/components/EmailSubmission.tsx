@@ -93,7 +93,7 @@ const EmailSubmission = ({ user }: UserProps) => {
       return;
     }
     try {
-      const response = await axios.post('YOUR_API_ENDPOINT', formData);
+      const response = await axios.post('/api/reachouts', formData);
       console.log('Form submission successful:', response.data);
     } catch (error) {
       console.error('Form submission error:', error);

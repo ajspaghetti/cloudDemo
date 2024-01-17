@@ -1,7 +1,7 @@
 export interface Reachout {
     id: string;
     message: string;
-    // Add other properties of a reachout here
+    // Add other properties of a reachout here if needed
   }
 
   export interface ReachoutState {
