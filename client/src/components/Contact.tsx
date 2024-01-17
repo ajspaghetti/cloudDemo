@@ -9,9 +9,6 @@ const Contact = () => {
   const user = useSelector((state: any) => state.user.user);
   const toggleForm = () => setShowEmailForm(!showEmailForm);
 
-  // Inside your component where you define image elements
-console.log("Image Path:", "../assets/icons/phone.svg");
-
   return (
     <>
       <div>

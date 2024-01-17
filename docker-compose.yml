@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "3001:3000" # Rails API will be accessible on host port 3001
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/ecommerce_development
+      - SECRET_KEY_BASE=10db024d90dfb8d226b292288ceb7f04a138caf94a5e085914e75c180876f6525ea07a5aa92328910f12e32fece04b703ff172d6739ec66146016b495a7aa271
+    depends_on:
+      - mongo
+
+  client:
+    build: ./client
+    ports:
+      - "4001:80" # React client will be accessible on host port 4001
+    depends_on:
+      - api
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

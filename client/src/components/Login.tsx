@@ -105,7 +105,6 @@ const Login: React.FC = () => {
             <label htmlFor="password" className={formData.password ? 'hidden' : ''}>Password</label>
             {!isPasswordEmpty && (
               <span className="password-toggle" onClick={togglePasswordVisibility}>
-                {/* Replace with your icon or leave blank for now */}
               </span>
             )}
           </div>

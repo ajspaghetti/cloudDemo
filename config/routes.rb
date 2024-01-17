@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Devise routes for users
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -9,16 +10,20 @@ Rails.application.routes.draw do
   }
 
   # Custom routes for user CRUD operations
-  # Assuming you have corresponding actions in UsersController
   get '/users/:id', to: 'users#show', as: 'user'
   patch '/users/:id', to: 'users#update'
   delete '/users/:id', to: 'users#destroy'
+
+  # Routes for reachouts
+  resources :reachouts
+  get '/user_reachouts', to: 'reachouts#user_reachouts'
+
 
   # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
   post '/refresh-token', to: 'users#refresh_token'
   post '/users', to: 'users/registrations#create'
-  # You can define your root route if needed
+  # Define your root route if needed
   # root "some_controller#some_action"
 end

@@ -4,7 +4,7 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { isSessionValid } from '../redux/sessionUtils'; // Import the session validation function
 
 const ProtectedRoute: React.FC = () => {
-  const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn); // Adjust according to your state structure
+  const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
   const location = useLocation();
 
   useEffect(() => {

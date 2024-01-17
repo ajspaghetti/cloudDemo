@@ -60,10 +60,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Optional: Center the buttons vertically */
     margin-top: 20px;
     gap: 10px;
-    /* Adjust the gap as needed */
 }
 
 .button,
@@ -113,33 +111,20 @@
 
 .password-toggle.visible {
     display: block;
-    /* Show when there's content in the input */
 }
 
 .password-toggle.hidden {
     display: none;
-    /* Hide when the input is empty */
 }
-
-/* Adjust padding of input field to not overlap with toggle */
 
 .input-container input {
     padding-right: 30px;
-    /* Space for the eye icon */
 }
 
-/* Adjust padding of input field to not overlap with toggle */
-.input-container input {
-    padding-right: 30px;
-    /* Space for the eye icon */
-}
-
-/* Ensure the toggle is always visible when there's text in the input */
 .input-container.password-container input:not(:placeholder-shown)~.password-toggle {
     display: block;
 }
 
-/* Hide the toggle when input is empty and not focused */
 .input-container.password-container input:placeholder-shown:not(:focus)~.password-toggle {
     display: none;
 }

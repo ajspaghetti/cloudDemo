@@ -4,28 +4,24 @@ import './Skills.css';
 const Skills = () => {
   useEffect(() => {
 
-    // // Function to generate a random dark color
-    // const getRandomDarkColor = () => {
-    //   let color = "hsl(" + Math.random() * 360 + ", 100%, 20%)";
-    //   return color;
-    // };
+    // Function to generate a random dark color
 
     const getRandomPastelColor = () => {
-        let hue = Math.random() * 360;
-        let color = `hsl(${hue}, 45%, 55%)`;
-        return { normal: color, darker: `hsl(${hue}, 60%, 70%)` }; // Darker color for hover
-      };
+      let hue = Math.random() * 360;
+      let color = `hsl(${hue}, 45%, 55%)`;
+      return { normal: color, darker: `hsl(${hue}, 60%, 70%)` }; // Darker color for hover
+    };
 
-      // Assign pastel color to each skill and set hover effect
-      const skills = document.querySelectorAll('.skill-box');
-      skills.forEach(skill => {
-        const skillElement = skill as HTMLElement;
-        const colors = getRandomPastelColor();
-        skillElement.style.backgroundColor = colors.normal;
-        skillElement.onmouseover = () => skillElement.style.backgroundColor = colors.darker;
-        skillElement.onmouseleave = () => skillElement.style.backgroundColor = colors.normal;
-      });
-    }, []);
+    // Assign pastel color to each skill and set hover effect
+    const skills = document.querySelectorAll('.skill-box');
+    skills.forEach(skill => {
+      const skillElement = skill as HTMLElement;
+      const colors = getRandomPastelColor();
+      skillElement.style.backgroundColor = colors.normal;
+      skillElement.onmouseover = () => skillElement.style.backgroundColor = colors.darker;
+      skillElement.onmouseleave = () => skillElement.style.backgroundColor = colors.normal;
+    });
+  }, []);
 
   return (
     <div className="skills-container">
@@ -79,6 +75,15 @@ const Skills = () => {
         <li className="skill-box">Leadership & People Skills</li>
         <li className="skill-box">Mentorship</li>
         <li className="skill-box">Public Speaking</li>
+      </ul>
+
+      <h1>Languages</h1>
+      <ul className="skills-list">
+        <li className="skill-box">English (Native)</li>
+        <li className="skill-box">Spanish (Native)</li>
+        <li className="skill-box">Italian (Fluent)</li>
+        <li className="skill-box">Arabic (Intermediate)</li>
+        <li className="skill-box">French (Intermediate)</li>
       </ul>
     </div>
   );

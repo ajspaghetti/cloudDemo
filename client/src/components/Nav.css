@@ -45,8 +45,8 @@ nav ul li a:hover {
 
 .login-container {
   margin-left: auto;
-  display: flex; /* Add this property to align items horizontally */
-  align-items: center; /* Align items vertically in the login container */
+  display: flex; 
+  align-items: center;
 }
 
 .login-link,

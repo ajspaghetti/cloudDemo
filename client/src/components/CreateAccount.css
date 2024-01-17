@@ -14,7 +14,7 @@
 }
 
 .create-account-form {
-  width: 300px; /* Consistent with EmailSubmission.css */
+  width: 300px;
 }
 
 .input-container {
@@ -29,7 +29,6 @@
   border-bottom: 2px solid #333;
   outline: none;
   background-color: transparent;
-  /* Font size and color consistent with EmailSubmission.css */
   font-size: 16px;
   color: #333;
 }
@@ -41,7 +40,7 @@
 .buttons-container {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Added gap for spacing */
+  gap: 10px;
 }
 
 .create-account-button, .button {
@@ -92,7 +91,6 @@
     color: red;
   }
 
-  /* Additional styles for responsiveness and aesthetics */
   @media (max-width: 600px) {
   .create-account-form {
   width: 90%;
