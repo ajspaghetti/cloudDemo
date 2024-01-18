@@ -21,15 +21,15 @@
         - Write Terraform scripts to define infrastructure for both AWS and Azure.
         - This should include network setup, VMs, load balancers, etc.
     * Testing Infrastructure Locally
-        - You can test Terraform scripts locally using Terraform CLI.
+        - Test Terraform scripts locally using Terraform CLI.
 
 3. Kubernetes (K8s) for Container Orchestration
     * K8s Setup
         - Understand the basics of Kubernetes.
-        - Create Kubernetes manifests (YAML files) for your application.
-        - You can test setup locally using Minikube or Docker Desktop's Kubernetes feature.
+        - Create Kubernetes manifests (YAML files) for application.
+        - Test setup locally using Minikube or Docker Desktop's Kubernetes feature.
     * K8s Scaling
-        - Ensure your Kubernetes setup includes auto-scaling based on traffic.
+        - Ensure Kubernetes setup includes auto-scaling based on traffic.
 
 4. Deploying to Cloud (AWS & Azure)
     * AWS Deployment
@@ -41,7 +41,7 @@
 
 5. Domain Configuration and SSL Setup
     * Subdomain Setup
-        - Configure https://spagno.li to point to your load balancer in the cloud (AWS/Azure).
+        - Configure https://spagno.li to point to load balancer in the cloud (AWS/Azure).
         - Ensure you have an SSL certificate for HTTPS.
 
 6. Continuous Integration/Continuous Deployment (CI/CD)
@@ -56,8 +56,8 @@
 
 8. Documentation and Maintenance
     * Documentation
-        - Document your architecture, setup, and deployment procedures.
-        - This is crucial for maintenance and possible scaling.
+        - Document architecture, setup, and deployment procedures.
+        - *This is crucial for maintenance and possible scaling.
     * Regular Maintenance
         - Regularly update application and infrastructure for security and performance improvements.
 
