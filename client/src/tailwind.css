@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Set up ignore for annoying error from https://byby.dev/at-rule-tailwind */

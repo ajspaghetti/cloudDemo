@@ -23,5 +23,5 @@
   "include": [
     "src",
     "app"
-  ]
+, "public/assets", "public/index.ts"  ]
 }

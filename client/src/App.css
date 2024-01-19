@@ -6,18 +6,6 @@ html, body, #root {
 }
 
 
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
-}
-
-.App-content {
-  flex: 1; /* Allows this element to expand to fill available space */
-  /* Add other styles for your main content area if needed */
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,32 +13,16 @@ html, body, #root {
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
+  to {
+    transform: rotate(360deg);
   }
 }
 

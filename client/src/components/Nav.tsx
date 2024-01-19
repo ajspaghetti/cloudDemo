@@ -2,14 +2,13 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/userSlice';
-import logoImage from '../assets/images/Sli1.png';
 import './Nav.css';
 
 const Nav: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
-  const user = useSelector((state: any) => state.user.user); 
+  const user = useSelector((state: any) => state.user.user);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -21,7 +20,7 @@ const Nav: React.FC = () => {
       <ul>
         <li>
           <Link to="/">
-            <img src={logoImage} alt="Logo" className="logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/icons/Sli1.svg`} alt="Logo" className="logo" />
           </Link>
         </li>
         <li><Link to="/">Home</Link></li>

@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent, FocusEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './CreateAccount.css';
 
 interface AccountFormData {
   email: string;
@@ -92,14 +91,13 @@ const CreateAccount: React.FC = () => {
 
   return (
     <div>
-      <div className="title-container">
+      <div className="flex justify-center items-center h-1/5 pb-2.5">
         <h2>Create Your Account</h2>
       </div>
-      <div className="create-account-container">
-        <form className="create-account-form" onSubmit={handleCreateAccount}>
-
+      <div className="flex justify-center items-start m-2.5 h-auto overflow-y-auto">
+        <form className="w-full max-w-sm" onSubmit={handleCreateAccount}>
           {/* Email Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="email"
               id="email"
@@ -108,17 +106,20 @@ const CreateAccount: React.FC = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               required
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="email" className={formData.email ? 'hidden' : ''}>
-              Email <span className="required-asterisk">*</span>
+            <label htmlFor="email" className={`absolute top-0 left-0 transition-all ${formData.email && 'hidden'}`}>
+              Email <span className="text-red-500">*</span>
             </label>
             {invalidInput.email && (
-              <div className="validation-message">Invalid email format.</div>
+              <div className="absolute bg-red-200 text-red-700 p-1 rounded top-full left-1/2 transform -translate-x-1/2 whitespace-nowrap text-sm z-10">
+                Invalid email format.
+              </div>
             )}
           </div>
 
           {/* Password Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="password"
               id="password"
@@ -126,14 +127,15 @@ const CreateAccount: React.FC = () => {
               value={formData.password}
               onChange={handleChange}
               required
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="password" className={formData.password ? 'hidden' : ''}>
-              Password <span className="required-asterisk">*</span>
+            <label htmlFor="password" className={`absolute top-0 left-0 transition-all ${formData.password && 'hidden'}`}>
+              Password <span className="text-red-500">*</span>
             </label>
           </div>
 
           {/* Confirm Password Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="password"
               id="confirmPassword"
@@ -141,14 +143,15 @@ const CreateAccount: React.FC = () => {
               value={formData.confirmPassword}
               onChange={handleChange}
               required
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="confirmPassword" className={formData.confirmPassword ? 'hidden' : ''}>
-              Confirm Password <span className="required-asterisk">*</span>
+            <label htmlFor="confirmPassword" className={`absolute top-0 left-0 transition-all ${formData.confirmPassword && 'hidden'}`}>
+              Confirm Password <span className="text-red-500">*</span>
             </label>
           </div>
 
           {/* First Name Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="text"
               id="firstName"
@@ -156,14 +159,15 @@ const CreateAccount: React.FC = () => {
               value={formData.firstName}
               onChange={handleChange}
               required
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="firstName" className={formData.firstName ? 'hidden' : ''}>
-              First Name <span className="required-asterisk">*</span>
+            <label htmlFor="firstName" className={`absolute top-0 left-0 transition-all ${formData.firstName && 'hidden'}`}>
+              First Name <span className="text-red-500">*</span>
             </label>
           </div>
 
           {/* Last Name Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="text"
               id="lastName"
@@ -171,38 +175,45 @@ const CreateAccount: React.FC = () => {
               value={formData.lastName}
               onChange={handleChange}
               required
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="lastName" className={formData.lastName ? 'hidden' : ''}>
-              Last Name <span className="required-asterisk">*</span>
+            <label htmlFor="lastName" className={`absolute top-0 left-0 transition-all ${formData.lastName && 'hidden'}`}>
+              Last Name <span className="text-red-500">*</span>
             </label>
           </div>
 
           {/* Company Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="text"
               id="company"
               name="company"
               value={formData.company}
               onChange={handleChange}
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="company" className={formData.company ? 'hidden' : ''}>Company</label>
+            <label htmlFor="company" className={`absolute top-0 left-0 transition-all ${formData.company && 'hidden'}`}>
+              Company
+            </label>
           </div>
 
           {/* Title Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="text"
               id="title"
               name="title"
               value={formData.title}
               onChange={handleChange}
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="title" className={formData.title ? 'hidden' : ''}>Title</label>
+            <label htmlFor="title" className={`absolute top-0 left-0 transition-all ${formData.title && 'hidden'}`}>
+              Title
+            </label>
           </div>
 
           {/* Phone Number Input */}
-          <div className="input-container">
+          <div className="relative mb-5">
             <input
               type="tel"
               id="phoneNumber"
@@ -210,15 +221,22 @@ const CreateAccount: React.FC = () => {
               value={formData.phoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
+              className="w-full p-2.5 border-b-2 border-gray-800 bg-transparent text-lg text-gray-800"
             />
-            <label htmlFor="phoneNumber" className={formData.phoneNumber ? 'hidden' : ''}>Phone Number</label>
+            <label htmlFor="phoneNumber" className={`absolute top-0 left-0 transition-all ${formData.phoneNumber && 'hidden'}`}>
+              Phone Number
+            </label>
             {invalidInput.phone && (
-              <div className="validation-message">Invalid phone format.</div>
+              <div className="absolute bg-red-200 text-red-700 p-1 rounded top-full left-1/2 transform -translate-x-1/2 whitespace-nowrap text-sm z-10">
+                Invalid phone format.
+              </div>
             )}
           </div>
-          <div className="buttons-container">
-            <Link to="/login" className="button">Already have an account?</Link>
-            <button type="submit" className="create-account-button">Create Account</button>
+
+
+          <div className="flex justify-between gap-2.5">
+            <Link to="/login" className="bg-black text-white p-2.5 rounded cursor-pointer w-32 transition-all hover:bg-gray-700">Already have an account?</Link>
+            <button type="submit" className="bg-olive-drab text-white p-2.5 rounded cursor-pointer w-32 transition-transform ease-in-out duration-500 hover:bg-olive-drab-light hover:scale-110">Create Account</button>
           </div>
         </form>
       </div>

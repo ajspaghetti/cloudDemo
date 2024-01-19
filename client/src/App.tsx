@@ -1,26 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
-import Nav from './components/Nav'; // Adjust the import path as necessary
+import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
-import WorkHistory from './components/WorkHistory'
-import Education from './components/Education'
-import Skills from './components/Skills'
+import WorkHistory from './components/WorkHistory';
+import Education from './components/Education';
+import Skills from './components/Skills';
 import Footer from './components/Footer';
-import Shop from './components/Shop'
-import Projects from './components/Projects'
+import Shop from './components/Shop';
+import Projects from './components/Projects';
 import CreateAccount from './components/CreateAccount';
 import Forgot from './components/Forgot';
-import './App.css';
+import './App.css'
+import './tailwind.css';
+import './index.css'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <div className="App-content">
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-1">
         <Router>
           <Nav />
           <Routes>
