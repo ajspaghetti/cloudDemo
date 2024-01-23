@@ -90,7 +90,7 @@ const CreateAccount: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="mt-20">
       <div className="flex justify-center items-center h-1/5 pb-2.5">
         <h2>Create Your Account</h2>
       </div>

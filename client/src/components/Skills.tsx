@@ -22,32 +22,36 @@ const Skills = () => {
 
   return (
     <div className="text-center mx-10 my-10">
-      <h1>Technical Skills</h1>
-      <ul className="flex flex-wrap justify-start list-none p-0 gap-2.5 m-auto">
-        {['Azure', 'AWS', 'O365', 'SharePoint', 'Virtual Machines (VMs)', 'EDR', 'MDR', 'XDR', 'SIEM', 'SOAR', 'HTML', 'CSS', 'JavaScript', 'React', 'JSX', 'TypeScript', 'Redux', 'Ruby on Rails', 'Python', 'Django', 'Flask', 'SQL', 'PostgreSQL', 'MySQL', 'Git', 'GitHub', 'PowerShell', 'Bash', 'VBA', 'Linux', 'Ubuntu Server'].map(skill => (
-          <li key={skill} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
-            {skill}
-          </li>
-        ))}
-      </ul>
-
-      <h1>Skills</h1>
-      <ul className="flex flex-wrap justify-start list-none p-0 gap-2.5 m-auto">
-        {['Digital Transformation', 'Object Oriented Programming', 'Database Management', 'Cybersecurity & Authentication', 'Project Management', 'Building Processes', 'Vendor Relations', 'CRMs', 'Automation Engineering', 'Collaboration', 'Leadership & People Skills', 'Mentorship', 'Public Speaking'].map(skill => (
-          <li key={skill} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
-            {skill}
-          </li>
-        ))}
-      </ul>
-
-      <h1>Languages</h1>
-      <ul className="flex flex-wrap justify-start list-none p-0 gap-2.5 m-auto">
-        {['English (Native)', 'Spanish (Native)', 'Italian (Fluent)', 'Arabic (Intermediate)', 'French (Intermediate)'].map(language => (
-          <li key={language} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
-            {language}
-          </li>
-        ))}
-      </ul>
+      <div className="mt-20 mb-10">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mt-4 mb-10">Technical Skills</h1>
+        <ul className="flex flex-wrap justify-center list-none p-0 gap-2.5 m-auto">
+          {['Azure', 'AWS', 'O365', 'SharePoint', 'Virtual Machines (VMs)', 'EDR', 'MDR', 'XDR', 'SIEM', 'SOAR', 'HTML', 'CSS', 'JavaScript', 'React', 'JSX/TSX', 'TypeScript', 'Redux', 'Ruby on Rails', 'Python', 'Django', 'Flask', 'SQL', 'PostgreSQL', 'MySQL', 'Git', 'GitHub', 'PowerShell', 'Bash', 'VBA', 'Linux', 'Ubuntu Server', 'Nginx', 'Docker', 'Kubernetes', 'IaC', 'SAML Auth', 'OAuth', 'Tailwind.css', 'Bootstrap', 'MaterialUI'].map(skill => (
+            <li key={skill} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-20 mb-10">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mt-4 mb-10">Skills</h1>
+        <ul className="flex flex-wrap justify-center list-none p-0 gap-2.5 m-auto">
+          {['Digital Transformation', 'Object-Oriented Prog.', 'Database Management', 'Cybersecurity', 'Authentication', 'Project Management', 'Building Processes', 'Vendor Relations', 'CRMs', 'Automation', 'DevOps', 'Collaboration', 'Leadership & People Skills', 'Mentorship', 'Public Speaking'].map(skill => (
+            <li key={skill} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-20 mb-30">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mt-4 mb-10">Languages</h1>
+        <ul className="flex flex-wrap justify-center list-none p-0 gap-2.5 m-auto">
+          {['English (Native)', 'Spanish (Native)', 'Italian (Fluent)', 'Arabic (Intermediate)', 'French (Intermediate)'].map(language => (
+            <li key={language} className="skill-box flex items-center justify-center text-white p-2.5 box-border w-1/6 mb-2.5 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105">
+              {language}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

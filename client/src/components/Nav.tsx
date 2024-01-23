@@ -20,7 +20,7 @@ const Nav: React.FC = () => {
       <ul>
         <li>
           <Link to="/">
-            <img src={`${process.env.PUBLIC_URL}/assets/icons/Sli1.svg`} alt="Logo" className="logo" />
+            <img src={`${process.env.PUBLIC_URL}/Sli2.png`} alt="Logo" className="logo" />
           </Link>
         </li>
         <li><Link to="/">Home</Link></li>
